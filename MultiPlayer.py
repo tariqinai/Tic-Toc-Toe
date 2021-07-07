@@ -12,16 +12,15 @@ class MultiPlayer(TicTocToe):
 
   def Input(self):
     self.num1 = int(input(f"{self.player1} Enter Board Number as mentioned above : "))
-    if self.num1 in self.masterHistory[0]:
-      print("You can't select same number again!!!")
-    elif self.num1 in self.masterHistory[1]:
-      print("Player 2 already selected this number!!!\nTry Again...")
-      self.Input()
-    else:
-      self.historyP1.append(self.num1)
-      self.boardM(self.masterHistory)
+    while self.num1 in self.masterHistory[0] or self.num1 in self.masterHistory[1]:
+      self.num1 = int(input(f"{self.player1} Enter a unique Board Number : "))
+    self.historyP1.append(self.num1)
+    self.boardM(self.masterHistory)
+
 
     self.num2 = int(input(f"{self.player2} Enter Board Number as mentioned above : "))
+    while self.num2 in self.masterHistory[0] or self.num2 in self.masterHistory[1]:
+      self.num2 = int(input(f"{self.player2} Enter a unique Board Number : "))
     self.historyP2.append(self.num2)
     self.boardM(self.masterHistory)
 
@@ -39,5 +38,5 @@ class MultiPlayer(TicTocToe):
       print()
 
   def gameRules(self):
-    self.Input()
+    pass
 

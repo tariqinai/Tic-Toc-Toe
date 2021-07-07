@@ -1,6 +1,6 @@
 # TODO Name if empty going to be Guest
-# TODO All variables must be initialize in class
 # TODO Loop Up the Multiplayer and Single player Till match Tied or one of the player Wins.
+# TODO The rules are going to implement using all() function.
 ##############
 from MultiPlayer import MultiPlayer as mp
 from SinglePlayer import SinglePlayer as sp
@@ -20,7 +20,7 @@ if __name__ == '__main__':
       print('\033[1;32;40m \t\t##Multi-Player##\033[0m')
       ticM = mp()
       ticM.board()
-      ticM.gameRules()
+      ticM.Input()
       ###################
     # Getting Out of Loop
     elif choice.lower() == 'q':
