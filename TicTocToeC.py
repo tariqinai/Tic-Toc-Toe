@@ -8,6 +8,7 @@ class TicTocToe(object):
     self.num1 = 0
     self.historyP1 = []
     self.masterHistory = []
+    self.masterHistory.append(self.historyP1)
   @abstract
   def Input(self):
     pass
