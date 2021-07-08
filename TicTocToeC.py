@@ -4,6 +4,8 @@ from abc import abstractmethod as abstract
 class TicTocToe(object):
   def __init__(self):
     self.player1 = input("Player 1 Name : ")
+    if not len(self.player1):
+      self.player1 = 'Guest1'
     self.player1Sym = '#'
     self.num1 = 0
     self.historyP1 = []
