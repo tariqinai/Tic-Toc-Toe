@@ -52,6 +52,3 @@ class MultiPlayer(TicTocToe):
           print('_', end='\t')
       print()
 
-  def gameRules(self):
-    pass
-
