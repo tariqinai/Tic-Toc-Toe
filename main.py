@@ -20,7 +20,10 @@ if __name__ == '__main__':
       print('\033[1;32;40m \t\t##Multi-Player##\033[0m')
       ticM = mp()
       ticM.board()
-      ticM.Input()
+      while True:
+        check = ticM.Input()
+        if check == 'b':
+          break
       ###################
     # Getting Out of Loop
     elif choice.lower() == 'q':

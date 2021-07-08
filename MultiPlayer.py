@@ -16,13 +16,28 @@ class MultiPlayer(TicTocToe):
       self.num1 = int(input(f"{self.player1} Enter a unique Board Number : "))
     self.historyP1.append(self.num1)
     self.boardM(self.masterHistory)
-
+    if len(self.masterHistory[0]) >= 3:
+      for i in range(len(self.win)):
+        if all(val in self.masterHistory[0] for val in self.win[i]):
+          print(f"Congrats {self.player1} you win.")
+          return 'b'
+        elif len(self.masterHistory[0]) + len(self.masterHistory[1]) == 9:
+          print("Game is Drawn.")
+          return 'b'
 
     self.num2 = int(input(f"{self.player2} Enter Board Number as mentioned above : "))
     while self.num2 in self.masterHistory[0] or self.num2 in self.masterHistory[1]:
       self.num2 = int(input(f"{self.player2} Enter a unique Board Number : "))
     self.historyP2.append(self.num2)
     self.boardM(self.masterHistory)
+    if len(self.masterHistory[1]) >= 3:
+      for i in range(len(self.win)):
+        if all(val in self.masterHistory[1] for val in self.win[i]):
+          print(f"Congrats {self.player2} you win.")
+          return 'b'
+        elif len(self.masterHistory[0]) + len(self.masterHistory[1]) == 9:
+          print("Game is Drawn.")
+          return 'b'
 
   def boardM(self, history):
     counter = 0
